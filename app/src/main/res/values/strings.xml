@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mobile Accelerometer</string>
+    <string name="executionBtn_text">START</string>
+    <string name="xValueTextView_name">X :</string>
+    <string name="yValueTextView_name">Y :</string>
+    <string name="zValueTextView_name">Z :</string>
+
+    <color name="colorOfStart">#FF4CAF50</color>
+    <color name="colorOfStop">#FFF44336</color>
+
+</resources>
