@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
     private TextView xValueTextView;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private SensorManager sensorManager;
     private Sensor accelerometer;
+
+    DecimalFormat decimalFormat = new DecimalFormat("##0.00#");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +69,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         if(isStart) {
-            xValueTextView.setText(sensorEvent.values[0] + "");
-            yValueTextView.setText(sensorEvent.values[1] + "");
-            zValueTextView.setText(sensorEvent.values[2] + "");
+            xValueTextView.setText(decimalFormat.format(sensorEvent.values[0]) + "");
+            yValueTextView.setText(decimalFormat.format(sensorEvent.values[1]) + "");
+            zValueTextView.setText(decimalFormat.format(sensorEvent.values[2]) + "");
         } else {
-            xValueTextView.setText("");
-            yValueTextView.setText("");
-            zValueTextView.setText("");
+            xValueTextView.setText("N/A");
+            yValueTextView.setText("N/A");
+            zValueTextView.setText("N/A");
         }
     }
 
